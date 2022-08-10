@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="copy"  >
+<target name="copy">
+  <copy file="src/test/resources/dev/formatter.js" tofile="target/reports/html/formatter.js" overwrite="true"/>
+  <copy file="src/test/resources/dev/style.css" tofile="target/reports/html/style.css" overwrite="true"/>
+  <copy file="src/test/resources/dev/index.html" tofile="target/reports/html/index.html" overwrite="true"/>
+  <copy file="src/test/resources/dev/counter.js" tofile="target/reports/html/counter.js" overwrite="true"/>
+  <replace file="target/reports/html/index.html">
+    <replacefilter>
+      <replacetoken>@build-date@</replacetoken>
+      <replacevalue>2022-08-08 13:23</replacevalue>
+    </replacefilter>
+  </replace>
+</target>
+</project>
